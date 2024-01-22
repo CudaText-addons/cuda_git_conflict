@@ -1,2 +1,6 @@
+2024.01.22 (by @veksha)
++ add: "Solve nearest conflict" command moves caret to start of conflict.
+- fix: made width and height of dialog menu smaller so it will not cover editor so much.
+
 2021.07.09
 initial version

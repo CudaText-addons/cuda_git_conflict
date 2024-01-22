@@ -30,6 +30,7 @@ class Command:
                 # scroll to conflict
                 if not self._is_line_on_screen(conflict[1])  or  not self._is_line_on_screen(conflict[3]):
                     self.ed.set_prop(PROP_LINE_TOP, conflict[1])
+                self.ed.set_caret(*conflict[:2])
 
                 res = self._choose_commit(conflict, sep_line)
                 if res is not None:
@@ -69,7 +70,7 @@ class Command:
         dlg_items.append(_('Both'))
         assert len(dlg_items) == 3
 
-        res = dlg_menu(DMENU_LIST, dlg_items, caption=_('Git Conflict Solver'))
+        res = dlg_menu(DMENU_LIST, dlg_items, caption=_('Git Conflict Solver'), w=400, h=200)
         return res
 
 
